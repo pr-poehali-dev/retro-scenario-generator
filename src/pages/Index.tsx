@@ -64,15 +64,25 @@ export default function Index() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[hsl(var(--room-bg))]/20 to-[hsl(var(--room-bg))]/40" />
       
       <div className="relative z-10 w-full max-w-5xl">
-        <div className="bg-gradient-to-b from-gray-400 via-gray-300 to-gray-400 p-8 rounded-lg shadow-2xl border-4 border-gray-500">
-          <div className="bg-gray-800 p-4 rounded-t-sm border-2 border-gray-900 mb-4">
-            <div className="flex items-center justify-between">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                <div className="w-3 h-3 rounded-full bg-green-500" />
+        <div className="relative bg-gradient-to-br from-[#e8e4d9] via-[#d4cfc4] to-[#c9c4b8] p-12 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.3)] border-[6px] border-[#a39d8f]">
+          <div className="absolute top-6 left-6 flex gap-3">
+            <div className="w-4 h-4 rounded-full bg-gradient-to-br from-gray-600 to-gray-800 shadow-inner" />
+            <div className="w-4 h-4 rounded-full bg-gradient-to-br from-gray-600 to-gray-800 shadow-inner" />
+          </div>
+          
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-32 h-3 bg-gradient-to-b from-[#a39d8f] to-[#8a857a] rounded-full shadow-inner" />
+          
+          <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-[#8a857a] text-[10px] font-mono tracking-wider">
+            IBM 5150
+          </div>
+          
+          <div className="bg-gradient-to-br from-[#2a2a2a] via-[#1a1a1a] to-[#0a0a0a] p-3 rounded-lg border-4 border-[#4a4a4a] shadow-[inset_0_0_20px_rgba(0,0,0,0.8)]">
+            <div className="flex items-center justify-between px-2 py-1">
+              <div className="flex gap-2 items-center">
+                <div className="w-2 h-2 rounded-full bg-red-600 shadow-[0_0_8px_rgba(255,0,0,0.6)] animate-pulse" />
+                <div className="text-[hsl(var(--crt-green))]/60 text-[10px] font-mono">PWR</div>
               </div>
-              <div className="text-gray-400 text-xs font-mono">SCREENPLAY.EXE</div>
+              <div className="text-[hsl(var(--crt-green))]/40 text-[10px] font-mono tracking-widest">SCREENPLAY.EXE</div>
             </div>
           </div>
 
@@ -167,8 +177,8 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="bg-gray-800 p-2 rounded-b-sm border-2 border-t-0 border-gray-900 mt-4">
-            <div className="text-[hsl(var(--crt-green))] text-xs font-mono text-center">
+          <div className="mt-3 flex justify-center">
+            <div className="text-[hsl(var(--crt-green))]/30 text-[9px] font-mono text-center tracking-wider">
               SCREENPLAY GENERATOR v1.0 © 1985
             </div>
           </div>
