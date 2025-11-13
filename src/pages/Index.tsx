@@ -63,8 +63,8 @@ export default function Index() {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[hsl(var(--room-bg))]/20 to-[hsl(var(--room-bg))]/40" />
       
-      <div className="relative z-10 w-full max-w-5xl">
-        <div className="relative bg-gradient-to-br from-[#e8e4d9] via-[#d4cfc4] to-[#c9c4b8] p-12 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.3)] border-[6px] border-[#a39d8f]">
+      <div className="relative z-10 w-full max-w-5xl flex flex-col items-center gap-6">
+        <div className="relative bg-gradient-to-br from-[#e8e4d9] via-[#d4cfc4] to-[#c9c4b8] p-12 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.3)] border-[6px] border-[#a39d8f] w-full">
           <div className="absolute top-6 left-6 flex gap-3">
             <div className="w-4 h-4 rounded-full bg-gradient-to-br from-gray-600 to-gray-800 shadow-inner" />
             <div className="w-4 h-4 rounded-full bg-gradient-to-br from-gray-600 to-gray-800 shadow-inner" />
@@ -76,17 +76,18 @@ export default function Index() {
             IBM 5150
           </div>
           
-          <div className="bg-gradient-to-br from-[#2a2a2a] via-[#1a1a1a] to-[#0a0a0a] p-3 rounded-lg border-4 border-[#4a4a4a] shadow-[inset_0_0_20px_rgba(0,0,0,0.8)]">
-            <div className="flex items-center justify-between px-2 py-1">
+          <div className="relative bg-gradient-to-br from-[#2a2a2a] via-[#1a1a1a] to-[#0a0a0a] p-3 rounded-lg border-[8px] border-[#4a4a4a] shadow-[inset_0_0_30px_rgba(0,0,0,0.9),0_0_40px_rgba(0,255,65,0.15)]">
+            <div className="flex items-center justify-between px-2 py-1 mb-2">
               <div className="flex gap-2 items-center">
                 <div className="w-2 h-2 rounded-full bg-red-600 shadow-[0_0_8px_rgba(255,0,0,0.6)] animate-pulse" />
                 <div className="text-[hsl(var(--crt-green))]/60 text-[10px] font-mono">PWR</div>
               </div>
               <div className="text-[hsl(var(--crt-green))]/40 text-[10px] font-mono tracking-widest">SCREENPLAY.EXE</div>
             </div>
+            <div className="absolute inset-3 bg-gradient-radial from-transparent via-[hsl(var(--crt-green))]/5 to-transparent pointer-events-none rounded" />
           </div>
 
-          <div className="crt-screen scanlines flicker p-6 rounded-sm shadow-inner min-h-[600px] relative">
+          <div className="crt-screen scanlines flicker p-6 rounded-sm shadow-[inset_0_0_40px_rgba(0,0,0,0.9)] min-h-[600px] relative border-2 border-black/50">
             <div className="absolute top-4 right-4 flex items-center gap-3 bg-[hsl(var(--crt-bg))]/80 p-3 rounded border border-[hsl(var(--crt-green))]/30">
               <Label htmlFor="storyboard-mode" className="text-[hsl(var(--crt-green))] text-sm">
                 РЕЖИМ РАСКАДРОВКИ
@@ -180,6 +181,68 @@ export default function Index() {
           <div className="mt-3 flex justify-center">
             <div className="text-[hsl(var(--crt-green))]/30 text-[9px] font-mono text-center tracking-wider">
               SCREENPLAY GENERATOR v1.0 © 1985
+            </div>
+          </div>
+        </div>
+
+        <div className="relative w-full max-w-4xl">
+          <div className="bg-gradient-to-br from-[#e8e4d9] via-[#d4cfc4] to-[#c9c4b8] p-6 pt-8 rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.4)] border-4 border-[#a39d8f]">
+            <div className="absolute top-2 left-1/2 -translate-x-1/2 text-[#8a857a] text-[9px] font-mono tracking-wider">
+              MODEL M KEYBOARD
+            </div>
+            
+            <div className="grid grid-cols-15 gap-1.5">
+              {['Esc', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12'].map((key) => (
+                <div key={key} className="col-span-1 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-1.5 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center">
+                  {key}
+                </div>
+              ))}
+            </div>
+            
+            <div className="grid grid-cols-15 gap-1.5 mt-3">
+              {['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Back'].map((key) => (
+                <div key={key} className={`${key === 'Back' ? 'col-span-2' : 'col-span-1'} bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center`}>
+                  {key}
+                </div>
+              ))}
+            </div>
+            
+            <div className="grid grid-cols-15 gap-1.5 mt-1.5">
+              <div className="col-span-1 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center">Tab</div>
+              {['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']'].map((key) => (
+                <div key={key} className="col-span-1 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center">
+                  {key}
+                </div>
+              ))}
+              <div className="col-span-2 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center">\</div>
+            </div>
+            
+            <div className="grid grid-cols-15 gap-1.5 mt-1.5">
+              <div className="col-span-2 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center">Caps</div>
+              {['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', "'"].map((key) => (
+                <div key={key} className="col-span-1 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center">
+                  {key}
+                </div>
+              ))}
+              <div className="col-span-2 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center">Enter</div>
+            </div>
+            
+            <div className="grid grid-cols-15 gap-1.5 mt-1.5">
+              <div className="col-span-2 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center">Shift</div>
+              {['Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/'].map((key) => (
+                <div key={key} className="col-span-1 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center">
+                  {key}
+                </div>
+              ))}
+              <div className="col-span-3 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center">Shift</div>
+            </div>
+            
+            <div className="grid grid-cols-15 gap-1.5 mt-1.5">
+              <div className="col-span-2 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center">Ctrl</div>
+              <div className="col-span-2 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center">Alt</div>
+              <div className="col-span-7 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center"></div>
+              <div className="col-span-2 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center">Alt</div>
+              <div className="col-span-2 bg-gradient-to-b from-[#4a4a4a] to-[#2a2a2a] text-[#d4d4d4] text-[9px] font-mono px-2 py-2 rounded shadow-[0_2px_0_#1a1a1a,inset_0_1px_0_#6a6a6a] text-center">Ctrl</div>
             </div>
           </div>
         </div>
